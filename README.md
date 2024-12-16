@@ -30,6 +30,9 @@ Editar o lobo/config.py conforme o tutorial [12. Configure the config.py File](h
 docker-compose up -d --build 
 ```
 
+```Verificar os containers: lobo e postgres
+docker ps
+```
 
 ``` Instalar e executar
 docker exec -it postgres psql -h localhost -U guarauser -d guaradb -c "CREATE EXTENSION pg_trgm;" \
