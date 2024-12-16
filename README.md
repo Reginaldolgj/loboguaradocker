@@ -33,6 +33,11 @@ docker-compose up -d --build
 ```Verificar os containers: lobo e postgres
 docker ps
 ```
+    Resultado:
+        ... NAMES
+            lobo
+            postgres
+
 
 ``` Instalar e executar
 docker exec -it postgres psql -h localhost -U guarauser -d guaradb -c "CREATE EXTENSION pg_trgm;" && \
