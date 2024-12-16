@@ -35,8 +35,8 @@ docker ps
 ```
 
 ``` Instalar e executar
-docker exec -it postgres psql -h localhost -U guarauser -d guaradb -c "CREATE EXTENSION pg_trgm;" \
-docker exec -it lobo /home/ubuntu/loboguara/install.sh \ 
+docker exec -it postgres psql -h localhost -U guarauser -d guaradb -c "CREATE EXTENSION pg_trgm;" && \
+docker exec -it lobo /home/ubuntu/loboguara/install.sh && \ 
 docker exec -it lobo sudo -u loboguara /opt/loboguara/start.sh
 ```
 
