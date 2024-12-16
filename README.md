@@ -27,10 +27,10 @@ pip install foobar
 
 ```Download
     git clone https://github.com/Reginaldolgj/loboguaradocker.git
+```
     Editar o lobo/config.py conforme o tutorial [12. Configure the config.py File](https://loboguara.olivsec.com.br/docs/lobo_guara_installation_manual_on_Ubuntu_24-04.html#12-configure-the-configpy-file)
 
-```
-
+    
 ``` Instalar e executar
 docker exec -it postgres psql -h localhost -U guarauser -d guaradb -c "CREATE EXTENSION pg_trgm;" \
 docker exec -it lobo /home/ubuntu/loboguara/install.sh \ 
