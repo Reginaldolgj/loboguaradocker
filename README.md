@@ -33,10 +33,10 @@ docker-compose up -d --build
 ```Verificar os containers: lobo e postgres
 docker ps
 ```
-    Resultado:
-        ... NAMES
-            lobo
-            postgres
+Resultado:
+    ... NAMES
+        lobo
+        postgres
 
 
 ``` Instalar e executar
@@ -48,12 +48,14 @@ docker exec -it lobo sudo -u loboguara /opt/loboguara/start.sh
 ```Criar admin
 http://0.0.0.0:7405/admin
 ```
+
 ```Login
 http://0.0.0.0:7405/login
 ```
 
-Remove
+
+```Remover
 docker-compose down
 docker image rm loboguaradocker-main-lobo_guara loboguaradocker-main-postgres
 docker volume rm loboguaradocker-main_postgres_data
-
+```
