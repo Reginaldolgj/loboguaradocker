@@ -46,3 +46,9 @@ http://0.0.0.0:7405/admin
 ```Login
 http://0.0.0.0:7405/login
 ```
+
+Remove
+docker-compose down
+docker image rm loboguaradocker-main-lobo_guara loboguaradocker-main-postgres
+docker volume rm loboguaradocker-main_postgres_data
+
