@@ -1,0 +1,46 @@
+services:
+  postgres:
+    container_name: postgres
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "512M"
+    environment:
+      POSTGRES_USER: "guarauser"
+      POSTGRES_PASSWORD: "YOURPASSWD1!"
+    networks:
+      lobo_guara:
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  lobo_guara:
+    container_name: lobo
+    build:
+      context: ./lobo
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: "2G"
+    depends_on:
+      - postgres
+    ports:
+      - "7405:7405"
+    networks:
+      lobo_guara:
+
+networks:
+    lobo_guara:
+      driver: bridge
+      ipam:
+        config:
+          - subnet: 192.168.0.0/24
+            gateway: 192.168.0.10
+
+volumes:
+  postgres_data:
