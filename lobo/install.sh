@@ -41,12 +41,11 @@ if [ -z "$MAIL_SERVER" ] || [ -z "$MAIL_PORT" ] || [ -z "$MAIL_USERNAME" ] || [ 
     error_exit "Incomplete email configuration!"
 fi
 
-#PRECISEI COMENTAR, API NAO RESPONDE
-#echo "Checking access to the Lobo Guará API..."
-#API_RESPONSE=$(curl -s -H "x-access-tokens: $API_ACCESS_TOKEN" "$API_URL/verify_token")
-#if [[ "$API_RESPONSE" != *"Token is valid"* ]]; then
-#    error_exit "Invalid or expired token for the Lobo Guará API!"
-#fi
+echo "Checking access to the Lobo Guará API..."
+API_RESPONSE=$(curl -s -H "x-access-tokens: $API_ACCESS_TOKEN" "$API_URL/verify_token")
+if [[ "$API_RESPONSE" != *"Token is valid"* ]]; then
+    error_exit "Invalid or expired token for the Lobo Guará API!"
+fi
 
 echo "Checking binaries..."
 for path in "$CHROME_DRIVER_PATH" "$GOOGLE_CHROME_PATH" "$FFUF_PATH" "$SUBFINDER_PATH"; do
