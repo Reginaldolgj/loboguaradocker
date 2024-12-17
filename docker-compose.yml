@@ -4,11 +4,6 @@ services:
     build:
       context: ./postgres
       dockerfile: Dockerfile
-    deploy:
-      resources:
-        limits:
-          cpus: "2"
-          memory: "512M"
     environment:
       POSTGRES_USER: "guarauser"
       POSTGRES_PASSWORD: "YOURPASSWD1!"
