@@ -25,8 +25,15 @@ Instalar o [docker-compose](https://docs.docker.com/compose/).
 ```
 
 
+```
+    cd loboguaradocker/
+```
+
 > Nota: Editar o lobo/config.py conforme o tutorial [12. Configure the config.py File](https://loboguara.olivsec.com.br/docs/lobo_guara_installation_manual_on_Ubuntu_24-04.html#12-configure-the-configpy-file)
 
+```
+    vim lobo/config.py
+```
 
 Executar docker compose
 ```
